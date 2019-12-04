@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Logic Test">
+	<title></title>
+</head>
+<body>
+
+<h5>Inputs</h5>
+
+<label for="t-input">T</label>
+<input type="text" id="t-input">
+
+<br>
+
+<label for="n-input">N</label>
+<input type="text" id="n-input">
+
+<br>
+
+<label for="m-input">M</label>
+<input type="text" id="m-input">
+
+<h5>Output</h5>
+
+<label id="output-label"></label>
+
+	
+
+<script src="assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+
+<script>
+	$(function () {
+
+		resolve();
+
+	});
+
+	function resolve() {
+		var result = "";
+		var t = parseInt($("#t-input").val());
+		var n = parseInt($("#n-input").val()), m = parseInt($("#m-input").val());
+		while (t--) {
+			if (m >= n) {
+				result = (n % 2 === 0) ? "L" : "R";
+			} else {
+				result = (m % 2 === 0) ? "U" : "D";
+			}
+		}
+		$("#output-label").val(result);
+	}
+
+</script>
+</body>
+</html>
